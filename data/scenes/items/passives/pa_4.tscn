@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://data/assets/items/passives/common/4.png" type="Texture" id=1]
+[ext_resource path="res://data/scenes/items/passives/passive_item_base.tscn" type="PackedScene" id=2]
+[ext_resource path="res://data/scripts/items/passive/common/pa_4.gd" type="Script" id=3]
+
+[node name="pa_4" instance=ExtResource( 2 )]
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource( 1 )

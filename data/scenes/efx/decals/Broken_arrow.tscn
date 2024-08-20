@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://data/assets/efx/decals/broken_arrow3.png" type="Texture" id=1]
+[ext_resource path="res://data/assets/efx/decals/broken_arrow1.png" type="Texture" id=3]
+[ext_resource path="res://data/assets/efx/decals/broken_arrow2.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "frame",
+"speed": 5.0
+} ]
+
+[node name="Broken_arrow" type="Node2D"]
+z_index = -2
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "frame"
+offset = Vector2( -9, 0 )

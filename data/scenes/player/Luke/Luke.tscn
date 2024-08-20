@@ -1,0 +1,73 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://data/scenes/player/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://data/scenes/player/Luke/Luke_sprites.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://data/scripts/player/Luke/Luke.gd" type="Script" id=3]
+[ext_resource path="res://data/assets/items/weapons/swords/default/simple_sword_right_swing1.png" type="Texture" id=4]
+[ext_resource path="res://data/assets/items/weapons/swords/default/simple_sword_left_swing2.png" type="Texture" id=5]
+[ext_resource path="res://data/assets/items/weapons/swords/default/simple_sword_left_swing1.png" type="Texture" id=6]
+[ext_resource path="res://data/assets/items/weapons/swords/default/simple_sword_right_swing2.png" type="Texture" id=7]
+[ext_resource path="res://data/assets/items/weapons/swords/default/simple_sword_right_swing3.png" type="Texture" id=8]
+[ext_resource path="res://data/assets/items/weapons/swords/default/simple_sword_left_swing3.png" type="Texture" id=9]
+[ext_resource path="res://data/scenes/player/Luke/Right_hand_sprites.tres" type="SpriteFrames" id=10]
+[ext_resource path="res://data/scenes/equipment/luke/rings.tres" type="SpriteFrames" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "Swing_left",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "Swing_right",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": false,
+"name": "Idle_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "Idle_right",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Luke" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Body" parent="YSort" index="0"]
+frames = ExtResource( 2 )
+animation = "Idle_right"
+
+[node name="Legs" parent="YSort" index="1"]
+frames = ExtResource( 2 )
+
+[node name="Weapon" parent="YSort" index="2"]
+rotation = 0.261799
+z_index = 1
+frames = SubResource( 1 )
+animation = "Idle_left"
+offset = Vector2( 15, 0 )
+
+[node name="Right_hand" parent="YSort/Weapon" index="0"]
+frames = ExtResource( 10 )
+animation = "Idle_left"
+offset = Vector2( 15, 0 )
+
+[node name="Ring" parent="YSort/Weapon" index="1"]
+frames = ExtResource( 11 )
+offset = Vector2( 15, 0 )
+
+[node name="Left_hand" parent="YSort/Weapon" index="2"]
+frames = SubResource( 2 )

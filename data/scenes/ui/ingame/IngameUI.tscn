@@ -1,0 +1,447 @@
+[gd_scene load_steps=52 format=2]
+
+[ext_resource path="res://data/scripts/ui/ingame/health/Health.gd" type="Script" id=1]
+[ext_resource path="res://data/assets/ui/ingame/get_item/background_get_item4.png" type="Texture" id=2]
+[ext_resource path="res://data/assets/ui/ingame/stamina_bar/stamina_bar_lines.png" type="Texture" id=3]
+[ext_resource path="res://data/scripts/ui/ingame/money/Money.gd" type="Script" id=4]
+[ext_resource path="res://data/fonts/default_font.tres" type="DynamicFontData" id=5]
+[ext_resource path="res://data/assets/ui/ingame/stamina_bar/stamina_bar_progress.png" type="Texture" id=6]
+[ext_resource path="res://data/assets/ui/ingame/life_bar/heart_healthy1.png" type="Texture" id=7]
+[ext_resource path="res://data/assets/ui/ingame/equipment/head.png" type="Texture" id=8]
+[ext_resource path="res://data/assets/ui/ingame/stats/stats2.png" type="Texture" id=9]
+[ext_resource path="res://data/assets/ui/ingame/stats/stats3.png" type="Texture" id=10]
+[ext_resource path="res://data/assets/ui/ingame/equipment/gloves.png" type="Texture" id=11]
+[ext_resource path="res://data/scripts/ui/ingame/stats/ATK_RATE.gd" type="Script" id=12]
+[ext_resource path="res://data/scripts/ui/ingame/stats/SPD.gd" type="Script" id=13]
+[ext_resource path="res://data/assets/ui/ingame/equipment/boots.png" type="Texture" id=14]
+[ext_resource path="res://data/assets/ui/ingame/equipment/weapon.png" type="Texture" id=15]
+[ext_resource path="res://data/assets/ui/ingame/equipment/ring.png" type="Texture" id=16]
+[ext_resource path="res://data/assets/ui/ingame/equipment/magic.png" type="Texture" id=17]
+[ext_resource path="res://data/assets/ui/ingame/equipment/chest.png" type="Texture" id=18]
+[ext_resource path="res://data/scripts/ui/ingame/equipment/Equipment.gd" type="Script" id=19]
+[ext_resource path="res://data/assets/ui/ingame/stamina_bar/stamina_bar_under.png" type="Texture" id=20]
+[ext_resource path="res://data/assets/ui/ingame/life_bar/life_bar_under.png" type="Texture" id=21]
+[ext_resource path="res://data/assets/ui/ingame/life_bar/life_bar_progress.png" type="Texture" id=22]
+[ext_resource path="res://data/assets/ui/ingame/life_bar/life_bar_lines.png" type="Texture" id=23]
+[ext_resource path="res://data/scripts/ui/ingame/stamina/Stamina.gd" type="Script" id=24]
+[ext_resource path="res://data/assets/ui/ingame/life_bar/life_bar_under_end.png" type="Texture" id=25]
+[ext_resource path="res://data/assets/ui/ingame/stamina_bar/stamina_bar_under_end.png" type="Texture" id=26]
+[ext_resource path="res://data/assets/ui/ingame/money/money_symbol.png" type="Texture" id=27]
+[ext_resource path="res://data/assets/ui/ingame/life_bar/heart_healthy2.png" type="Texture" id=28]
+[ext_resource path="res://data/assets/ui/ingame/life_bar/heart_healthy3.png" type="Texture" id=29]
+[ext_resource path="res://data/assets/ui/ingame/stamina_bar/stamina_symbol4.png" type="Texture" id=30]
+[ext_resource path="res://data/assets/ui/ingame/stamina_bar/stamina_symbol3.png" type="Texture" id=31]
+[ext_resource path="res://data/assets/ui/ingame/stamina_bar/stamina_symbol2.png" type="Texture" id=32]
+[ext_resource path="res://data/assets/ui/ingame/stamina_bar/stamina_symbol1.png" type="Texture" id=33]
+[ext_resource path="res://data/scripts/ui/ingame/get_item/Get_Item.gd" type="Script" id=34]
+[ext_resource path="res://data/assets/ui/ingame/get_item/background_get_item5.png" type="Texture" id=35]
+[ext_resource path="res://data/assets/ui/ingame/get_item/background_get_item3.png" type="Texture" id=36]
+[ext_resource path="res://data/assets/ui/ingame/get_item/background_get_item1.png" type="Texture" id=37]
+[ext_resource path="res://data/assets/ui/ingame/get_item/background_get_item2.png" type="Texture" id=38]
+[ext_resource path="res://data/assets/ui/ingame/get_item/background_get_item8.png" type="Texture" id=39]
+[ext_resource path="res://data/assets/ui/ingame/get_item/background_get_item6.png" type="Texture" id=40]
+[ext_resource path="res://data/assets/ui/ingame/get_item/background_get_item7.png" type="Texture" id=41]
+[ext_resource path="res://data/assets/ui/ingame/get_item/background_get_item9.png" type="Texture" id=42]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 33 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 33 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "pulse",
+"speed": 8.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "pulse",
+"speed": 8.0
+} ]
+
+[sub_resource type="DynamicFont" id=3]
+size = 8
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 8
+font_data = ExtResource( 5 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 37 ), ExtResource( 38 ), ExtResource( 36 ), ExtResource( 2 ), ExtResource( 35 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 39 ), ExtResource( 42 ) ],
+"loop": false,
+"name": "close",
+"speed": 18.0
+}, {
+"frames": [ ExtResource( 35 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 39 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 35 ), ExtResource( 2 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 37 ) ],
+"loop": false,
+"name": "open",
+"speed": 18.0
+} ]
+
+[sub_resource type="DynamicFontData" id=7]
+antialiased = false
+font_path = "res://data/fonts/superstar_memesbruh03.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+outline_color = Color( 0.607843, 0.345098, 0.172549, 1 )
+font_data = SubResource( 7 )
+
+[sub_resource type="DynamicFontData" id=9]
+antialiased = false
+font_path = "res://data/fonts/dogicapixel.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+size = 8
+font_data = SubResource( 9 )
+
+[node name="IngameUI" type="Control"]
+margin_right = 512.0
+margin_bottom = 288.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stamina" type="Control" parent="."]
+margin_left = 8.0
+margin_top = 28.0
+margin_right = 200.0
+margin_bottom = 50.0
+script = ExtResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Under_end" type="TextureRect" parent="Stamina"]
+margin_left = 28.0
+margin_top = 4.0
+margin_right = 30.0
+margin_bottom = 16.0
+texture = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bar" type="TextureProgress" parent="Stamina"]
+margin_left = 22.0
+margin_top = 4.0
+margin_right = 34.0
+margin_bottom = 13.0
+value = 100.0
+texture_under = ExtResource( 20 )
+texture_progress = ExtResource( 6 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lines" type="TextureRect" parent="Stamina"]
+margin_left = 22.0
+margin_top = 4.0
+margin_right = 34.0
+margin_bottom = 13.0
+texture = ExtResource( 3 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Symbol" type="AnimatedSprite" parent="Stamina"]
+use_parent_material = true
+position = Vector2( 12, 0 )
+frames = SubResource( 1 )
+animation = "idle"
+playing = true
+centered = false
+
+[node name="Health" type="Control" parent="."]
+margin_left = 6.0
+margin_top = 8.0
+margin_right = 256.0
+margin_bottom = 32.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bar" type="TextureProgress" parent="Health"]
+use_parent_material = true
+margin_left = 18.0
+margin_top = 5.0
+margin_right = 32.0
+margin_bottom = 17.0
+value = 70.0
+texture_under = ExtResource( 21 )
+texture_progress = ExtResource( 22 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lines" type="TextureRect" parent="Health"]
+margin_left = 18.0
+margin_top = 5.0
+margin_right = 32.0
+margin_bottom = 17.0
+texture = ExtResource( 23 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Under_end" type="TextureRect" parent="Health"]
+use_parent_material = true
+margin_left = 32.0
+margin_top = 5.0
+margin_right = 34.0
+margin_bottom = 17.0
+texture = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Symbol" type="AnimatedSprite" parent="Health"]
+use_parent_material = true
+position = Vector2( 4, -2 )
+frames = SubResource( 2 )
+animation = "idle"
+centered = false
+
+[node name="Money" type="Control" parent="."]
+margin_left = 14.0
+margin_top = 56.0
+margin_right = 70.0
+margin_bottom = 72.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Money"]
+position = Vector2( 4, 2 )
+texture = ExtResource( 27 )
+
+[node name="Money" type="Label" parent="Money"]
+margin_left = 18.0
+margin_right = 58.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 3 )
+text = "0"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stats" type="MarginContainer" parent="."]
+modulate = Color( 1, 1, 1, 0.607843 )
+margin_left = 8.0
+margin_top = 80.0
+margin_right = 88.0
+margin_bottom = 192.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Stats"]
+margin_right = 80.0
+margin_bottom = 112.0
+custom_constants/vseparation = 0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Stats/GridContainer"]
+margin_right = 18.0
+margin_bottom = 18.0
+texture = ExtResource( 9 )
+
+[node name="ATK_RATE" type="Label" parent="Stats/GridContainer"]
+margin_left = 22.0
+margin_top = 6.0
+margin_right = 49.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 4 )
+text = "Test"
+script = ExtResource( 12 )
+
+[node name="TextureRect3" type="TextureRect" parent="Stats/GridContainer"]
+margin_top = 18.0
+margin_right = 18.0
+margin_bottom = 36.0
+texture = ExtResource( 10 )
+
+[node name="SPD" type="Label" parent="Stats/GridContainer"]
+margin_left = 22.0
+margin_top = 24.0
+margin_right = 49.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 4 )
+text = "Test"
+script = ExtResource( 13 )
+
+[node name="Equipment" type="MarginContainer" parent="."]
+modulate = Color( 1, 1, 1, 0.607843 )
+margin_top = 360.0
+margin_right = 72.0
+margin_bottom = 432.0
+rect_clip_content = true
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Equipment"]
+margin_right = 72.0
+margin_bottom = 72.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ring" type="TextureRect" parent="Equipment/GridContainer"]
+margin_right = 24.0
+margin_bottom = 24.0
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Head" type="TextureRect" parent="Equipment/GridContainer"]
+margin_left = 24.0
+margin_right = 48.0
+margin_bottom = 24.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Magic" type="TextureRect" parent="Equipment/GridContainer"]
+margin_left = 48.0
+margin_right = 72.0
+margin_bottom = 24.0
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Arms" type="TextureRect" parent="Equipment/GridContainer"]
+margin_top = 24.0
+margin_right = 24.0
+margin_bottom = 48.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Chest" type="TextureRect" parent="Equipment/GridContainer"]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Weapon" type="TextureRect" parent="Equipment/GridContainer"]
+margin_left = 48.0
+margin_top = 24.0
+margin_right = 72.0
+margin_bottom = 48.0
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TextureRect7" type="MarginContainer" parent="Equipment/GridContainer"]
+margin_top = 48.0
+margin_right = 24.0
+margin_bottom = 72.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foot" type="TextureRect" parent="Equipment/GridContainer"]
+margin_left = 24.0
+margin_top = 48.0
+margin_right = 48.0
+margin_bottom = 72.0
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TextureRect9" type="MarginContainer" parent="Equipment/GridContainer"]
+margin_left = 48.0
+margin_top = 48.0
+margin_right = 72.0
+margin_bottom = 72.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Get_Item" type="Control" parent="."]
+margin_left = 384.0
+margin_top = 64.0
+margin_right = 448.0
+margin_bottom = 104.0
+script = ExtResource( 34 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scroll" type="AnimatedSprite" parent="Get_Item"]
+frames = SubResource( 6 )
+animation = "idle"
+
+[node name="Title" type="Label" parent="Get_Item"]
+margin_left = -156.0
+margin_top = -23.0
+margin_right = 156.0
+margin_bottom = 9.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.470588, 0.25098, 0.105882, 1 )
+text = "item_name"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Get_Item"]
+margin_left = -156.0
+margin_top = -10.0
+margin_right = 156.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0.470588, 0.25098, 0.105882, 1 )
+text = "item_description"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="End" type="Timer" parent="Get_Item"]
+
+[node name="Text" type="Timer" parent="Get_Item"]
+[connection signal="timeout" from="Get_Item/End" to="Get_Item" method="_on_End_timeout"]
+[connection signal="timeout" from="Get_Item/Text" to="Get_Item" method="_on_Text_timeout"]

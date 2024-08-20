@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://data/data_base/localization/localization.en.translation", "res://data/data_base/localization/localization.pt.translation" ]
+
+source_file="res://data/data_base/localization/localization.csv"
+dest_files=[ "res://data/data_base/localization/localization.en.translation", "res://data/data_base/localization/localization.pt.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

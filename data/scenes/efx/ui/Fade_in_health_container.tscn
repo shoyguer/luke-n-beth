@@ -1,0 +1,97 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://data/assets/ui/ingame/life_bar/fade_out5.png" type="Texture" id=1]
+[ext_resource path="res://data/assets/ui/ingame/life_bar/fade_out1.png" type="Texture" id=2]
+[ext_resource path="res://data/assets/ui/ingame/life_bar/fade_out3.png" type="Texture" id=3]
+[ext_resource path="res://data/assets/ui/ingame/life_bar/fade_in4.png" type="Texture" id=4]
+[ext_resource path="res://data/assets/ui/ingame/life_bar/fade_in3.png" type="Texture" id=5]
+[ext_resource path="res://data/scripts/efx/ui/Fade_in_health_container.gd" type="Script" id=6]
+[ext_resource path="res://data/assets/ui/ingame/life_bar/fade_in2.png" type="Texture" id=7]
+[ext_resource path="res://data/assets/ui/ingame/life_bar/fade_out2.png" type="Texture" id=8]
+[ext_resource path="res://data/assets/ui/ingame/life_bar/fade_out4.png" type="Texture" id=9]
+[ext_resource path="res://data/assets/ui/ingame/life_bar/fade_in5.png" type="Texture" id=10]
+[ext_resource path="res://data/assets/ui/ingame/life_bar/fade_in1.png" type="Texture" id=11]
+[ext_resource path="res://data/assets/ui/ingame/life_bar/fade_in6.png" type="Texture" id=12]
+[ext_resource path="res://data/assets/ui/ingame/life_bar/fade_out6.png" type="Texture" id=13]
+
+[sub_resource type="AnimatedTexture" id=1]
+frames = 6
+oneshot = true
+fps = 13.0
+frame_0/texture = ExtResource( 11 )
+frame_1/texture = ExtResource( 7 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 5 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 4 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 10 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 12 )
+frame_5/delay_sec = 0.0
+
+[sub_resource type="AnimatedTexture" id=2]
+frames = 6
+oneshot = true
+fps = 13.0
+frame_0/texture = ExtResource( 2 )
+frame_1/texture = ExtResource( 8 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 3 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 9 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 1 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 13 )
+frame_5/delay_sec = 0.0
+
+[node name="Fade_in_health_container" type="Control"]
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fade_in" type="TextureRect" parent="."]
+visible = false
+margin_right = 14.0
+margin_bottom = 12.0
+texture = SubResource( 1 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="End" type="TextureRect" parent="Fade_in"]
+margin_top = 1.0
+margin_right = 1.0
+margin_bottom = 10.0
+texture = SubResource( 1 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fade_out" type="TextureRect" parent="."]
+visible = false
+margin_right = 14.0
+margin_bottom = 12.0
+texture = SubResource( 2 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="End" type="TextureRect" parent="Fade_out"]
+margin_top = 1.0
+margin_right = 1.0
+margin_bottom = 10.0
+texture = SubResource( 2 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

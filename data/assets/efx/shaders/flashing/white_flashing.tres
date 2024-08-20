@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float white_opacity = 0;
+
+void fragment(){
+ COLOR.rgb = texture(TEXTURE, UV).rgb * (1.0 - white_opacity) + vec3(1,1,1) * white_opacity;
+ COLOR.a = texture(TEXTURE, UV).a ; 
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/white_opacity = 0.0

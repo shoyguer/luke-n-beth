@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=2]
+
+[ext_resource path="res://data/assets/items/weapons/bows/simple_bow4.png" type="Texture" id=1]
+[ext_resource path="res://data/assets/items/weapons/bows/simple_bow2.png" type="Texture" id=2]
+[ext_resource path="res://data/assets/items/weapons/bows/simple_bow_empty.png" type="Texture" id=3]
+[ext_resource path="res://data/assets/items/weapons/bows/simple_bow3.png" type="Texture" id=4]
+[ext_resource path="res://data/assets/items/weapons/bows/simple_bow1.png" type="Texture" id=5]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "Charge",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Empty",
+"speed": 5.0
+} ]
